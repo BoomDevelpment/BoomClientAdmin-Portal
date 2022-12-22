@@ -19,9 +19,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('scraper:bcv')->hourly();
-        $schedule->command('zelle:consolidate')->cron('*/30 7-21 * * *');
+        // $schedule->command('zelle:consolidate')->cron('*/30 7-21 * * *');
         $schedule->command('zelle:process')->cron('*/45 7-21 * * *');
-        // $schedule->command('zelle:consolidate')->everyThreeMinutes();
+        $schedule->command('zelle:consolidate')->everyMinute();
         // $schedule->command('zelle:process')->everyFiveMinutes();
 
         // ->everyMinute();

@@ -87,7 +87,7 @@ class ProcessConsolidateZelle extends Command
 
                 }else{
 
-                    $iPend  =   $user->transactions()->where([['wallet_id', $myWallet->id], ['id', 3], ['confirmed', 0]])->first();
+                    $iPend  =   $user->transactions()->where([['wallet_id', $myWallet->id], ['id', $cons->transaction_id], ['confirmed', 0]])->first();
                     $iData  =   [
                         "BS"            =>  ROUND( ($cons->report_amount * $iPend->meta['DIVISA'] ), 2),
                         "USD"           =>  ROUND( $cons->report_amount ,2),
